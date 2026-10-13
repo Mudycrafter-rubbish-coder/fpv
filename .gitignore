@@ -1,0 +1,19 @@
+# 临时工作目录：脚本运行产物、下载的中间件、QA 截图，不进仓库
+work/
+
+# Python 虚拟环境
+.venv/
+venv/
+env/
+
+# Python 缓存
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
