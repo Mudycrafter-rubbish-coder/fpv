@@ -1,0 +1,96 @@
+{
+  "analysis_types": [
+    "linear static impact-equivalent (top plate global bending)",
+    "linear static screw pull-through (top plate front stack hole)",
+    "linear static frame stack-hole pull-through (local 4 mm model)",
+    "linear static frame motor-load (global 4 mm frame)"
+  ],
+  "material": {
+    "model": "isotropic_linear_elastic",
+    "young_pa": 3300000000.0,
+    "poisson": 0.35,
+    "density_kg_m3": 1240.0,
+    "note": "PLA screening values; printed layer direction and defects are not measured"
+  },
+  "geometry": {
+    "top_plate": {
+      "thickness_mm": 3.0,
+      "stack_hole_diameter_mm": 2.19,
+      "front_stack_hole_edge_ligament_mm": 2.87,
+      "other_stack_hole_edge_ligament_mm": 6.87,
+      "slot_edge_ligament_mm": 1.16
+    },
+    "frame": {
+      "thickness_mm": 4.0,
+      "side_stack_hole_edge_ligament_mm": 2.87,
+      "motor_mount_outer_hole_ligament_mm": 2.51,
+      "rear_slot_ligament_mm": 1.98
+    }
+  },
+  "top_plate_pull": {
+    "stress_at_100N_mpa": {
+      "none": 24.88,
+      "washer_5mm": 19.11,
+      "washer_6mm": 17.12
+    },
+    "ultimate_load_n": {
+      "none": 201.0,
+      "washer_5mm": 262.0,
+      "washer_6mm": 292.0
+    },
+    "sf2_load_n": {
+      "none": 100.5,
+      "washer_5mm": 130.8,
+      "washer_6mm": 146.0
+    },
+    "note": "front stack hole, upward pull on top annulus; 4 bottom annuli fixed"
+  },
+  "top_plate_global": {
+    "stress_mpa": {
+      "20g": 0.487,
+      "50g": 1.217,
+      "100g": 2.433,
+      "200g": 4.866
+    },
+    "note": "75 g top mass distributed over 35×25 mm; 4 standoff annuli fixed"
+  },
+  "frame_stack_pull": {
+    "stress_at_100N_mpa": 13.03,
+    "stress_at_184N_mpa": 23.98,
+    "sf2_load_n": 192.0,
+    "note": "local 4 mm frame model, Ø5 washer; cut boundaries fixed"
+  },
+  "frame_arm": {
+    "nominal_arm_stress_mpa": {
+      "20N": 17.31,
+      "50N": 43.27
+    },
+    "corner_stress_mpa": {
+      "20N": 44.9,
+      "50N": 112.25
+    },
+    "sf2_load_n": 28.9,
+    "ultimate_load_n": 57.8,
+    "note": "FL motor load; corner values are mesh-dependent at the sharp diamond corner"
+  },
+  "impact_scenarios": {
+    "per_screw_at_300g_n": 55.2,
+    "per_screw_at_500g_n": 92.0,
+    "per_screw_at_1000g_n": 183.9,
+    "top_mass_kg": 0.075,
+    "note": "4 screws share the load; a 1 m drop can exceed 1000 g on a hard surface"
+  },
+  "verdict": {
+    "top_plate_stack_hole": "marginal at ~1000 g without a washer; use Ø5-6 steel washers",
+    "frame_stack_hole": "safer than the top plate because the frame is 4 mm thick",
+    "frame_arm_root": "the weakest impact location: add fillets/gussets; 50 N motor load is near PLA strength",
+    "top_plate_slots": "1.16 mm edge; reinforce if the battery strap pulls on them"
+  },
+  "limitations": [
+    "quasi-static equivalent loads, not transient drop/contact simulations",
+    "screw preload, friction and contact are not modelled",
+    "isotropic PLA; layer direction and defects are not measured",
+    "sharp re-entrant corners produce mesh-dependent stress singularities",
+    "a real drop test is required before trusting the safety margin"
+  ]
+}

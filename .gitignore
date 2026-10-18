@@ -11,6 +11,9 @@ __pycache__/
 *.py[cod]
 *.egg-info/
 
+# 动画逐帧中间产物（保留 GIF 和 *_numeric.npz / manifest）
+outputs/**/*_frames/
+
 # 编辑器 / 系统
 .vscode/
 .idea/

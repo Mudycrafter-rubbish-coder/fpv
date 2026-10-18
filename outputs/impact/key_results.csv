@@ -1,0 +1,24 @@
+case,metric,value,unit,note
+top_plate_pull,no_washer_100N,24.88,MPa,M2 head Ø3.8, 3 mm PLA
+top_plate_pull,washer_5mm_100N,19.11,MPa,Ø5 washer, 3 mm PLA
+top_plate_pull,washer_6mm_100N,17.12,MPa,Ø6 washer, 3 mm PLA
+top_plate_pull,ultimate_no_washer,201.0,N,50 MPa bulk strength
+top_plate_pull,ultimate_washer_5mm,262.0,N,50 MPa bulk strength
+top_plate_pull,ultimate_washer_6mm,292.0,N,50 MPa bulk strength
+top_plate_pull,sf2_no_washer,100.5,N,25 MPa allowable
+top_plate_pull,sf2_washer_5mm,130.8,N,25 MPa allowable
+top_plate_pull,sf2_washer_6mm,146.0,N,25 MPa allowable
+top_plate_global,20g,0.487,MPa,75 g top mass, 35×25 mm load
+top_plate_global,50g,1.217,MPa,
+top_plate_global,100g,2.433,MPa,
+top_plate_global,200g,4.866,MPa,
+top_plate_global,1000g,24.33,MPa,linear extrapolation
+frame_stack_pull,100N_washer_5mm,13.03,MPa,local 4 mm model
+frame_stack_pull,184N_washer_5mm,23.98,MPa,1000 g equivalent
+frame_stack_pull,sf2_washer_5mm,192.0,N,25 MPa allowable
+frame_arm,20N_nominal_arm,17.31,MPa,away from corner
+frame_arm,20N_corner,44.9,MPa,sharp diamond corner, singular
+frame_arm,50N_nominal_arm,43.27,MPa,near PLA bulk strength
+frame_arm,50N_corner,112.25,MPa,singular; use a fillet
+frame_arm,sf2_nominal_arm,28.9,N,25 MPa allowable
+frame_arm,ultimate_nominal_arm,57.8,N,50 MPa bulk strength

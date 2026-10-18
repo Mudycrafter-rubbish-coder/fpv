@@ -1,0 +1,44 @@
+{
+  "analysis_types": [
+    "undamped_linear_modal",
+    "single_dof_forced_response_screening"
+  ],
+  "model": {
+    "geometry": "cantilever plate 45 x 14 x t mm, clamped root",
+    "tip_mass_kg": 0.0085,
+    "material_model": "isotropic_linear_elastic_screening",
+    "mesh": "SfePy Q2 hexahedra, 24 x 8 x 3 vertices, 57,510 tetra-equivalent DOF",
+    "solver": "K phi = lambda M phi, shift-invert, lowest 5 modes",
+    "validation": "FEM vs Euler-Bernoulli bare-arm f1 within 1.5-2.0%; skill solver cross-check within 1e-10"
+  },
+  "recommended": {
+    "material": "PLA",
+    "arm_thickness_mm": 4.0,
+    "f1_hz": 151.3,
+    "infill": "5-6 top/bottom skins, 5 walls, 60-80% gyroid, 100% at arm roots and motor mounts"
+  },
+  "key_results": {
+    "PLA_3.5_f1_hz": 124.7,
+    "PLA_4.0_f1_hz": 151.3,
+    "PLA_4.5_f1_hz": 179.2,
+    "PETG_4.5_f1_hz": 143.8,
+    "ABS_4.5_f1_hz": 148.0,
+    "PA_3.5_f1_hz": 90.4,
+    "hover_band_rpm": [12000, 15000],
+    "full_throttle_band_rpm": [28000, 32000],
+    "1P_vertical_crossing_rpm_PLA_4.0": 9078,
+    "3P_vertical_crossing_rpm_PLA_4.0": 3026
+  },
+  "conclusions": [
+    "The first vertical arm mode is crossed during spool-up (2.5-10.7k RPM), not at hover or full throttle.",
+    "Radial prop unbalance is horizontal and mainly excites lateral/frame modes; balancing props is the highest-value fix.",
+    "Carbon fibre is not modelled as isotropic; a stiffer frame moves resonances rather than automatically reducing vibration.",
+    "PLA 4.0 mm is the recommended budget compromise; use washers, soft-mount the FC, enable RPM filter if supported."
+  ],
+  "limitations": [
+    "arm-only model, not full-frame modal analysis",
+    "isotropic material screening values, not measured printed samples",
+    "estimated damping and excitation amplitudes",
+    "no flight test or blackbox data"
+  ]
+}
