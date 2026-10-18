@@ -1,0 +1,9 @@
+mass_g,g_factor,direction,per_point_force_n,max_principal_mpa,max_von_mises_mpa,sf_bulk_50mpa,sf2_25mpa,max_uz_mm,max_uy_mm,verdict
+75,250,in_plane,45.98,16.26,13.19,3.08,1.54,0.001,0.02,OK (SF2)
+75,250,out_of_plane,45.98,35.11,29.44,1.42,0.71,0.226,0.027,"marginal (above SF2, below bulk)"
+75,500,in_plane,91.97,32.52,26.37,1.54,0.77,0.002,0.04,"marginal (above SF2, below bulk)"
+75,500,out_of_plane,91.97,70.21,58.88,0.71,0.36,0.451,0.053,FAIL (above PLA bulk 50 MPa)
+183,250,in_plane,112.2,39.67,32.18,1.26,0.63,0.002,0.049,"marginal (above SF2, below bulk)"
+183,250,out_of_plane,112.2,85.66,71.83,0.58,0.29,0.551,0.065,FAIL (above PLA bulk 50 MPa)
+183,500,in_plane,224.4,79.34,64.35,0.63,0.32,0.004,0.097,FAIL (above PLA bulk 50 MPa)
+183,500,out_of_plane,224.4,171.31,143.67,0.29,0.15,1.102,0.13,FAIL (above PLA bulk 50 MPa)

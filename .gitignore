@@ -14,6 +14,9 @@ __pycache__/
 # 动画逐帧中间产物（保留 GIF 和 *_numeric.npz / manifest）
 outputs/**/*_frames/
 
+# SfePy 运行时写出的网格文件
+domain.vtk
+
 # 编辑器 / 系统
 .vscode/
 .idea/

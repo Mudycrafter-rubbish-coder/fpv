@@ -73,6 +73,25 @@
     "ultimate_load_n": 57.8,
     "note": "FL motor load; corner values are mesh-dependent at the sharp diamond corner"
   },
+  "slot_half_holes": {
+    "geometry": {
+      "slot_mm": "4.30 x 12.10 stadium",
+      "half_hole_radius_mm": 2.15,
+      "edge_ligament_mm": 1.16,
+      "plate_thickness_mm": 3.0
+    },
+    "stress_mpa": {
+      "75g_250g_in_plane": 16.26,
+      "75g_250g_out_of_plane": 35.11,
+      "75g_500g_in_plane": 32.52,
+      "75g_500g_out_of_plane": 70.21,
+      "183g_250g_in_plane": 39.67,
+      "183g_250g_out_of_plane": 85.66,
+      "183g_500g_in_plane": 79.34,
+      "183g_500g_out_of_plane": 171.31
+    },
+    "note": "4 points share the load; out-of-plane +Z is the critical direction"
+  },
   "impact_scenarios": {
     "per_screw_at_300g_n": 55.2,
     "per_screw_at_500g_n": 92.0,
@@ -84,7 +103,8 @@
     "top_plate_stack_hole": "marginal at ~1000 g without a washer; use Ø5-6 steel washers",
     "frame_stack_hole": "safer than the top plate because the frame is 4 mm thick",
     "frame_arm_root": "the weakest impact location: add fillets/gussets; 50 N motor load is near PLA strength",
-    "top_plate_slots": "1.16 mm edge; reinforce if the battery strap pulls on them"
+    "top_plate_slots": "1.16 mm edge; reinforce if the battery strap pulls on them",
+    "slot_half_holes": "critical at 500 g out-of-plane (70 MPa at 75 g top mass); do not use as the only load path"
   },
   "limitations": [
     "quasi-static equivalent loads, not transient drop/contact simulations",

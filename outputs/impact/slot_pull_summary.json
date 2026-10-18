@@ -1,0 +1,151 @@
+{
+  "analysis_type": "static_linear_elasticity_slot_half_hole_pull",
+  "geometry": {
+    "slot_bounds_mm": {
+      "upper": "x ±16.403..20.700, y 7.760..19.859",
+      "lower": "x ±16.403..20.700, y -17.338..-5.240"
+    },
+    "half_hole_radius_mm": 2.1485,
+    "edge_ligament_mm": 1.156,
+    "plate_thickness_mm": 3.0
+  },
+  "load_definition": {
+    "points": "4 half-hole ends (upper ends of upper slots, lower ends of lower slots)",
+    "sharing": "total force split equally over 4 points",
+    "primary_mass_g": 75,
+    "worst_case_mass_g": 183,
+    "g_factors": [
+      250,
+      500
+    ],
+    "directions": [
+      "in_plane (along slot, outward)",
+      "out_of_plane (+Z)"
+    ]
+  },
+  "results": [
+    {
+      "mass_g": 75,
+      "g_factor": 250,
+      "direction": "in_plane",
+      "per_point_force_n": 45.98,
+      "max_principal_mpa": 16.26,
+      "max_von_mises_mpa": 13.19,
+      "sf_bulk_50mpa": 3.08,
+      "sf2_25mpa": 1.54,
+      "max_uz_mm": 0.001,
+      "max_uy_mm": 0.02,
+      "verdict": "OK (SF2)"
+    },
+    {
+      "mass_g": 75,
+      "g_factor": 250,
+      "direction": "out_of_plane",
+      "per_point_force_n": 45.98,
+      "max_principal_mpa": 35.11,
+      "max_von_mises_mpa": 29.44,
+      "sf_bulk_50mpa": 1.42,
+      "sf2_25mpa": 0.71,
+      "max_uz_mm": 0.226,
+      "max_uy_mm": 0.027,
+      "verdict": "marginal (above SF2, below bulk)"
+    },
+    {
+      "mass_g": 75,
+      "g_factor": 500,
+      "direction": "in_plane",
+      "per_point_force_n": 91.97,
+      "max_principal_mpa": 32.52,
+      "max_von_mises_mpa": 26.37,
+      "sf_bulk_50mpa": 1.54,
+      "sf2_25mpa": 0.77,
+      "max_uz_mm": 0.002,
+      "max_uy_mm": 0.04,
+      "verdict": "marginal (above SF2, below bulk)"
+    },
+    {
+      "mass_g": 75,
+      "g_factor": 500,
+      "direction": "out_of_plane",
+      "per_point_force_n": 91.97,
+      "max_principal_mpa": 70.21,
+      "max_von_mises_mpa": 58.88,
+      "sf_bulk_50mpa": 0.71,
+      "sf2_25mpa": 0.36,
+      "max_uz_mm": 0.451,
+      "max_uy_mm": 0.053,
+      "verdict": "FAIL (above PLA bulk 50 MPa)"
+    },
+    {
+      "mass_g": 183,
+      "g_factor": 250,
+      "direction": "in_plane",
+      "per_point_force_n": 112.2,
+      "max_principal_mpa": 39.67,
+      "max_von_mises_mpa": 32.18,
+      "sf_bulk_50mpa": 1.26,
+      "sf2_25mpa": 0.63,
+      "max_uz_mm": 0.002,
+      "max_uy_mm": 0.049,
+      "verdict": "marginal (above SF2, below bulk)"
+    },
+    {
+      "mass_g": 183,
+      "g_factor": 250,
+      "direction": "out_of_plane",
+      "per_point_force_n": 112.2,
+      "max_principal_mpa": 85.66,
+      "max_von_mises_mpa": 71.83,
+      "sf_bulk_50mpa": 0.58,
+      "sf2_25mpa": 0.29,
+      "max_uz_mm": 0.551,
+      "max_uy_mm": 0.065,
+      "verdict": "FAIL (above PLA bulk 50 MPa)"
+    },
+    {
+      "mass_g": 183,
+      "g_factor": 500,
+      "direction": "in_plane",
+      "per_point_force_n": 224.4,
+      "max_principal_mpa": 79.34,
+      "max_von_mises_mpa": 64.35,
+      "sf_bulk_50mpa": 0.63,
+      "sf2_25mpa": 0.32,
+      "max_uz_mm": 0.004,
+      "max_uy_mm": 0.097,
+      "verdict": "FAIL (above PLA bulk 50 MPa)"
+    },
+    {
+      "mass_g": 183,
+      "g_factor": 500,
+      "direction": "out_of_plane",
+      "per_point_force_n": 224.4,
+      "max_principal_mpa": 171.31,
+      "max_von_mises_mpa": 143.67,
+      "sf_bulk_50mpa": 0.29,
+      "sf2_25mpa": 0.15,
+      "max_uz_mm": 1.102,
+      "max_uy_mm": 0.13,
+      "verdict": "FAIL (above PLA bulk 50 MPa)"
+    }
+  ],
+  "conclusions": [
+    "250 g in-plane is the only clearly safe case (16.3 MPa at 75 g).",
+    "250 g out-of-plane is marginal (35.1 MPa at 75 g); a 1 mm boss/washer is advised.",
+    "500 g out-of-plane fails PLA bulk strength (70.2 MPa at 75 g).",
+    "If the whole 183 g quad hangs from these four points, even 250 g out-of-plane is 85.7 MPa; do not use the thin half-holes as the only load path."
+  ],
+  "recommendations": [
+    "Do not route the battery strap through the thin half-hole as the only load path.",
+    "Add a 2 mm local boss/ring around the half-hole end, or a 1 mm aluminum plate under the strap.",
+    "Increase the edge ligament from 1.16 mm to >=2.5 mm by moving the slot inward or extending the plate locally.",
+    "Fillet the slot-to-edge transition; sharp re-entrant geometry concentrates stress.",
+    "Use a separate strap bar on the bottom plate or route the strap around the plate."
+  ],
+  "limitations": [
+    "quasi-static equivalent load, not a transient drop/contact simulation",
+    "isotropic PLA screening; printed layer direction and defects are not measured",
+    "strap contact and friction are not modelled; the load is distributed over the half-hole wall nodes",
+    "the 1.16 mm ligament is resolved by ~2-3 elements; refine locally for a final design"
+  ]
+}
