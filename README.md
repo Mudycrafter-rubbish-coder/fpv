@@ -15,7 +15,7 @@
 | 机架怎么来？ | Fusion 画 DXF → 拉伸/导出 STL → PLA 打印；不是买现成碳板 |
 | 动力是什么？ | 1106 4200KV + Gemfan 3020-3 + 3S 650mAh，推重比约 **5.5** |
 | 推荐什么材料？ | **PLA 4.0 mm 机臂**；5–6 层蒙皮、5 圈壁、60–80% gyroid，机臂根部 100% |
-| 仿真做了什么？ | 机臂模态 / 1P、3P 响应 / stack 孔拉脱 / 底板臂根 / 4 个长槽半孔 |
+| 仿真做了什么？ | 机臂模态 / **整机装配模态** / 1P、3P 响应 / stack 孔拉脱 / 底板臂根 / 4 个长槽半孔 |
 | 最重要的结论？ | **不用买碳纤维**；PLA 4.0 够用；但必须加垫片、倒圆、加筋、做桨动平衡 |
 
 ![Z 层叠剖视](docs/img/z-stack.gif)
@@ -61,6 +61,18 @@
 ![PLA 3.5 vs 4.0 模态](outputs/vibration/mode_shape_compare.gif)
 
 *一阶弯曲振型慢放：PLA 4.0 更硬、频率更高；注意这是归一化振型，不是实际振幅。*
+
+### B2. 整机装配模态：为什么单根机臂不够
+
+![整机一阶模态 3D](outputs/assembly/assembly_mode1_3d.gif)
+
+*整机第 1 阶 **187.6 Hz**，PLA 全件，显示变形 4 mm。6 个壳体粘接、4 个电机 8.5 g + 电池 60 g 集中质量；颜色是相对模态应力。*
+
+![整机二阶模态 3D](outputs/assembly/assembly_mode2_3d.gif)
+
+*整机第 2 阶 **230.2 Hz**。第 1/2 阶都在悬停 1P（12–15k RPM = 200–250 Hz）附近；这是单根机臂模型没有暴露出来的整机/stack 模态。*
+
+> 重要：这版是**全 PLA**，柱顶加了 1 mm 夹紧环代表螺丝/垫片。真实柱子是黄铜的话，频率会上移；必须先量实际悬停 RPM 和黑匣子 FFT，再谈“会不会共振”。
 
 ### C. 冲击：stack 孔、底板臂根
 
@@ -121,6 +133,10 @@
 | `outputs/vibration/campbell.png` | PNG | 一阶模态与 1P/2P/3P 交点 |
 | `outputs/vibration/response_vs_rpm.png` | PNG | 1P/3P 响应 vs 转速 |
 | `outputs/vibration/mode_shape_compare.gif` | GIF | PLA 3.5 vs 4.0 一阶振型 |
+| `outputs/assembly/assembly_mode1_3d.gif` | GIF | 整机第 1 阶 187.6 Hz 3D |
+| `outputs/assembly/assembly_mode2_3d.gif` | GIF | 整机第 2 阶 230.2 Hz 3D |
+| `outputs/assembly/assembly_mode1_3d_preview.png` | PNG | 整机第 1 阶静态预览 |
+| `outputs/assembly/assembly_mode2_3d_preview.png` | PNG | 整机第 2 阶静态预览 |
 | `outputs/impact/stack_hole/top_plate_pull_3d.gif` | GIF | stack 孔 3D 应力特写 |
 | `outputs/impact/stack_hole/top_plate_pull_3d_preview.png` | PNG | 上面的静态预览 |
 | `outputs/impact/stack_hole/top_plate_load_heatmap.gif` | GIF | stack 孔 0→100 N 热力图 |
@@ -185,6 +201,11 @@
 4 个长槽半孔在 250 g / 500 g、面内 / 面外、75 g 上板 / 183 g 整机下的拉脱。<br>
 **结论**：500 g 面外 75 g 上板约 **70 MPa**，183 g 整机约 **171 MPa**；不能作唯一承力点，建议 2 mm 加强环/凸台或改扎带路径。
 
+### [10 · 整机装配模态](docs/10-整机装配模态.md)
+
+6 个壳体粘接成整机，全 PLA，带电机/电池集中质量的自由-自由模态；网格 0.7/1.6 mm，86,053 节点 / 384,776 四面体。<br>
+**结论**：整机第 1/2 阶 **187.6 / 230.2 Hz**，正好落在悬停 1P 附近；单根机臂模型没有暴露这些整机/stack 模态。必须量实际悬停 RPM + 黑匣子 FFT 确认。
+
 ---
 
 ## 关键尺寸速查
@@ -238,7 +259,7 @@
 fpv/
 ├── README.md                 项目总览（你在这里）
 ├── fusion_mcp.md             Fusion MCP 工程规范
-├── docs/                     01–09 设计/分析文档
+├── docs/                     01–10 设计/分析文档
 │   ├── 01-零件规格.md
 │   ├── 02-动力与推重比.md
 │   ├── 03-机架设计.md
@@ -248,10 +269,12 @@ fpv/
 │   ├── 07-振动与打印材料方案.md
 │   ├── 08-冲击与螺丝拉脱.md
 │   ├── 09-长槽半孔拉脱.md
+│   ├── 10-整机装配模态.md
 │   └── img/                  文档配图（z-stack / fc-mount / screw-map / prop-compare）
 ├── outputs/                  可直接看的结果
 │   ├── cad/                  v3 DXF/STL/预览 + 旧版 archive
 │   ├── vibration/            模态、Campbell、响应、振型动画
+│   ├── assembly/             整机装配模态、3D 振型动画
 │   ├── impact/               stack 孔、臂根、长槽半孔
 │   └── archive/              旧版仿真（只作历史对照）
 ├── ref/                      参考资料图（飞控/GPS 官方图）
@@ -263,6 +286,7 @@ fpv/
 - [`outputs/README.md`](outputs/README.md) — 结果目录地图
 - [`outputs/cad/README.md`](outputs/cad/README.md) — CAD 文件
 - [`outputs/vibration/README.md`](outputs/vibration/README.md) — 振动结果
+- [`outputs/assembly/README.md`](outputs/assembly/README.md) — 整机装配模态
 - [`outputs/impact/README.md`](outputs/impact/README.md) — 冲击/拉脱结果
 - [`docs/img/README.md`](docs/img/README.md) — 文档配图
 
@@ -272,11 +296,12 @@ fpv/
 
 - 软件：**SfePy 2026.3**，线性弹性 / 无阻尼模态。
 - 模态：机臂 45 × 14 × t mm，根部固定，末端 8.5 g；Q2 六面体，shift-invert 求最低 5 阶；与解析梁和工具箱自带求解器交叉验证。
+- 整机模态：`drone.stl` 的 6 个壳体 + 4 个夹紧环，0.7/1.6 mm 四面体，86,053 节点 / 384,776 四面体；自由-自由，前 6 阶刚体模态丢掉。
 - 冲击：线性静力**冲击等效**，把 250 g / 500 g / 1000 g 换成等效节点力；不是瞬态落摔/接触仿真。
 - 材料：PLA E = 3.3 GPa、ν = 0.35、ρ = 1240 kg/m³，是**各向同性筛选值**，不是本机打印件实测。
 - 表格/数值：优先看 `outputs/vibration/summary.json`、`outputs/impact/summary.json` 和各自的 CSV；动画里的颜色是应力，变形有放大倍数标注。
 
-**不能从这些图得到的结论**：整机中心板/支撑柱的真实模态、飞控闭环耦合、真实阻尼、真实桨不平衡量、落摔时的接触力。<br>
+**不能从这些图得到的结论**：飞控闭环耦合、真实阻尼、真实桨不平衡量、落摔时的接触力；整机模态里的 1 mm 夹紧环是假设，柱材料也要按实物确认。<br>
 **必须做的验证**：桨动平衡 → 挂重 → 0.5 m/1 m 落摔 → 黑匣子/手机 FFT。仿真只负责提前告诉你“哪里最可能先坏”。
 
 ---
@@ -287,7 +312,8 @@ fpv/
 2. **打印**：PLA、平躺、5–6 层蒙皮、5 圈壁、60–80% gyroid；机臂根部/电机座 100%。
 3. **装配**：照 z-stack 动画走；M2 螺丝不要暴力拧，stack 孔上下加 Ø5–6 垫片。
 4. **测试**：桨动平衡 → 挂重 → 0.5 m 草地 → 1 m 草地 → 0.5 m 硬地；先拆桨、用旧电池。
-5. **调参**：先目视飞调 PID，再上图传/GPS；换桨或换电池后重跑一次失控返航测试。
+5. **整机模态验证**：量实际悬停 RPM + 黑匣子 FFT，重点看 187/230/557/561 Hz；如果柱子实际是黄铜，重跑黄铜柱变体。
+6. **调参**：先目视飞调 PID，再上图传/GPS；换桨或换电池后重跑一次失控返航测试。
 
 ---
 

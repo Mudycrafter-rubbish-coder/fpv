@@ -9,6 +9,7 @@
 |---|---|---|
 | [`cad/`](cad/) | v3 底板 / 上层板 / 相机托架 DXF、STL、预览 | `v3-preview.png` |
 | [`vibration/`](vibration/) | 机臂模态、材料对比、Campbell 图、响应曲线、振型动画 | `f1_materials.png`、`campbell.png` |
+| [`assembly/`](assembly/) | 整机装配模态、3D 振型动画、网格收敛 | `assembly_mode1_3d.gif` |
 | [`impact/`](impact/) | stack 孔拉脱、底板臂根、长槽半孔、3D/热力图动画 | `stack_hole/top_plate_pull_3d.gif` |
 | [`archive/`](archive/) | 旧版 CAD、旧版仿真；只作历史对照 | `sim-v1-manual/README.md` |
 

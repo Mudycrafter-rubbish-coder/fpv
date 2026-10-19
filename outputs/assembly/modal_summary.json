@@ -1,0 +1,322 @@
+{
+  "analysis_type": "free_free_undamped_modal_all_pla",
+  "geometry": {
+    "source": "drone.stl",
+    "bounds_mm": [
+      [
+        -57.72,
+        -57.72,
+        -4.0
+      ],
+      [
+        57.72,
+        57.72,
+        25.01
+      ]
+    ],
+    "volume_mm3": 27447.27,
+    "pla_mass_g": 34.0,
+    "components": "bottom plate + top plate + 4 x Ø3x25 columns"
+  },
+  "mesh": {
+    "final": {
+      "size_mm": [
+        0.7,
+        1.6
+      ],
+      "nodes": 86053,
+      "tets": 384776
+    },
+    "convergence": [
+      {
+        "size_mm": [
+          1.0,
+          2.2
+        ],
+        "nodes": 68809,
+        "tets": 301770,
+        "f1_hz": 198.66,
+        "f2_hz": 243.75
+      },
+      {
+        "size_mm": [
+          0.8,
+          1.8
+        ],
+        "nodes": 79179,
+        "tets": 351180,
+        "f1_hz": 186.14,
+        "f2_hz": 228.96
+      },
+      {
+        "size_mm": [
+          0.7,
+          1.6
+        ],
+        "nodes": 86053,
+        "tets": 384776,
+        "f1_hz": 187.57,
+        "f2_hz": 230.18
+      }
+    ],
+    "surface_subdivide": "drone.stl 7,040 -> 112,640 triangles for animation (2x subdivide)"
+  },
+  "masses": {
+    "motor_each_g": 8.5,
+    "motor_count": 4,
+    "battery_g": 60.0,
+    "electronics_g": 15.0
+  },
+  "frequencies_hz": [
+    187.57124806545076,
+    230.17658474427182,
+    276.77831610119944,
+    285.38056367473257,
+    340.8537968182701,
+    416.24094929086175,
+    557.0427253258314,
+    561.0416039990446
+  ],
+  "modes": [
+    {
+      "mode": 1,
+      "frequency_hz": 187.57,
+      "dominant_motor_direction": "z",
+      "motor_mean_abs_xyz": [
+        0.224,
+        0.202,
+        7.801
+      ],
+      "bottom_mean_abs_xyz": [
+        0.186,
+        0.129,
+        4.197
+      ],
+      "top_mean_abs_xyz": [
+        0.239,
+        0.096,
+        0.213
+      ],
+      "rpm_1p": 11254.0,
+      "rpm_3p": 3751.0,
+      "1p_amp_at_12000": 8.09,
+      "3p_amp_at_12000": 0.11,
+      "1p_amp_at_13000": 3.97,
+      "3p_amp_at_13000": 0.09,
+      "1p_amp_at_14000": 2.82,
+      "3p_amp_at_14000": 0.08
+    },
+    {
+      "mode": 2,
+      "frequency_hz": 230.18,
+      "dominant_motor_direction": "z",
+      "motor_mean_abs_xyz": [
+        0.271,
+        0.348,
+        6.954
+      ],
+      "bottom_mean_abs_xyz": [
+        0.174,
+        0.331,
+        4.573
+      ],
+      "top_mean_abs_xyz": [
+        0.051,
+        0.56,
+        2.251
+      ],
+      "rpm_1p": 13811.0,
+      "rpm_3p": 4604.0,
+      "1p_amp_at_12000": 3.06,
+      "3p_amp_at_12000": 0.17,
+      "1p_amp_at_13000": 7.55,
+      "3p_amp_at_13000": 0.14,
+      "1p_amp_at_14000": 25.02,
+      "3p_amp_at_14000": 0.12
+    },
+    {
+      "mode": 3,
+      "frequency_hz": 276.78,
+      "dominant_motor_direction": "z",
+      "motor_mean_abs_xyz": [
+        0.427,
+        2.528,
+        4.243
+      ],
+      "bottom_mean_abs_xyz": [
+        0.384,
+        2.406,
+        2.589
+      ],
+      "top_mean_abs_xyz": [
+        0.599,
+        4.101,
+        0.24
+      ],
+      "rpm_1p": 16607.0,
+      "rpm_3p": 5536.0,
+      "1p_amp_at_12000": 1.09,
+      "3p_amp_at_12000": 0.27,
+      "1p_amp_at_13000": 1.58,
+      "3p_amp_at_13000": 0.22,
+      "1p_amp_at_14000": 2.45,
+      "3p_amp_at_14000": 0.19
+    },
+    {
+      "mode": 4,
+      "frequency_hz": 285.38,
+      "dominant_motor_direction": "z",
+      "motor_mean_abs_xyz": [
+        2.652,
+        0.428,
+        3.989
+      ],
+      "bottom_mean_abs_xyz": [
+        2.529,
+        0.369,
+        2.144
+      ],
+      "top_mean_abs_xyz": [
+        4.219,
+        0.554,
+        0.21
+      ],
+      "rpm_1p": 17123.0,
+      "rpm_3p": 5708.0,
+      "1p_amp_at_12000": 0.96,
+      "3p_amp_at_12000": 0.29,
+      "1p_amp_at_13000": 1.36,
+      "3p_amp_at_13000": 0.24,
+      "1p_amp_at_14000": 2.01,
+      "3p_amp_at_14000": 0.2
+    },
+    {
+      "mode": 5,
+      "frequency_hz": 340.85,
+      "dominant_motor_direction": "y",
+      "motor_mean_abs_xyz": [
+        1.431,
+        1.432,
+        0.331
+      ],
+      "bottom_mean_abs_xyz": [
+        0.953,
+        0.828,
+        0.216
+      ],
+      "top_mean_abs_xyz": [
+        2.543,
+        3.131,
+        0.065
+      ],
+      "rpm_1p": 20451.0,
+      "rpm_3p": 6817.0,
+      "1p_amp_at_12000": 0.52,
+      "3p_amp_at_12000": 0.48,
+      "1p_amp_at_13000": 0.68,
+      "3p_amp_at_13000": 0.38,
+      "1p_amp_at_14000": 0.88,
+      "3p_amp_at_14000": 0.31
+    },
+    {
+      "mode": 6,
+      "frequency_hz": 416.24,
+      "dominant_motor_direction": "z",
+      "motor_mean_abs_xyz": [
+        0.437,
+        1.305,
+        3.199
+      ],
+      "bottom_mean_abs_xyz": [
+        0.263,
+        1.152,
+        3.595
+      ],
+      "top_mean_abs_xyz": [
+        0.035,
+        1.898,
+        1.121
+      ],
+      "rpm_1p": 24974.0,
+      "rpm_3p": 8325.0,
+      "1p_amp_at_12000": 0.3,
+      "3p_amp_at_12000": 0.93,
+      "1p_amp_at_13000": 0.37,
+      "3p_amp_at_13000": 0.69,
+      "1p_amp_at_14000": 0.46,
+      "3p_amp_at_14000": 0.55
+    },
+    {
+      "mode": 7,
+      "frequency_hz": 557.04,
+      "dominant_motor_direction": "y",
+      "motor_mean_abs_xyz": [
+        4.024,
+        4.037,
+        0.901
+      ],
+      "bottom_mean_abs_xyz": [
+        2.129,
+        2.291,
+        1.699
+      ],
+      "top_mean_abs_xyz": [
+        0.158,
+        0.112,
+        1.089
+      ],
+      "rpm_1p": 33423.0,
+      "rpm_3p": 11141.0,
+      "1p_amp_at_12000": 0.15,
+      "3p_amp_at_12000": 6.12,
+      "1p_amp_at_13000": 0.18,
+      "3p_amp_at_13000": 2.75,
+      "1p_amp_at_14000": 0.21,
+      "3p_amp_at_14000": 1.72
+    },
+    {
+      "mode": 8,
+      "frequency_hz": 561.04,
+      "dominant_motor_direction": "z",
+      "motor_mean_abs_xyz": [
+        1.167,
+        0.688,
+        3.124
+      ],
+      "bottom_mean_abs_xyz": [
+        0.884,
+        0.419,
+        2.65
+      ],
+      "top_mean_abs_xyz": [
+        1.357,
+        0.084,
+        2.741
+      ],
+      "rpm_1p": 33662.0,
+      "rpm_3p": 11221.0,
+      "1p_amp_at_12000": 0.15,
+      "3p_amp_at_12000": 6.79,
+      "1p_amp_at_13000": 0.18,
+      "3p_amp_at_13000": 2.91,
+      "1p_amp_at_14000": 0.21,
+      "3p_amp_at_14000": 1.79
+    }
+  ],
+  "key_finding": "The full assembly has global modes near the hover band: mode 1 187.6 Hz (1P at 11.3k RPM), mode 2 230.2 Hz (1P at 13.8k RPM), modes 7/8 557/561 Hz (3P at 11.1/11.2k RPM). The arm-only model did not show these stack/global modes.",
+  "assumptions": [
+    "all bodies PLA (E=3.3 GPa, nu=0.35, rho=1240)",
+    "1 mm Ø6 collar at each column top represents screw/washer clamp",
+    "bonded plate/column interfaces",
+    "lumped motor/battery masses",
+    "free-free, first six rigid modes discarded",
+    "single-DOF amplification factors assume zeta=0.015; not measured damping"
+  ],
+  "limitations": [
+    "all-PLA baseline; brass columns would shift frequencies upward",
+    "the 1 mm collar/clamp is a simulation assumption, not exact CAD",
+    "no screw preload, friction or contact",
+    "modal amplitudes are normalized; not physical vibration levels",
+    "hover RPM and excitation amplitudes must be measured"
+  ]
+}
