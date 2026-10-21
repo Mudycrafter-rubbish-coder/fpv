@@ -11,8 +11,15 @@ __pycache__/
 *.py[cod]
 *.egg-info/
 
+# PyInstaller 构建产物（保留 *.spec 作为可复现配置）
+build/
+dist/
+
 # 动画逐帧中间产物（保留 GIF 和 *_numeric.npz / manifest）
 outputs/**/*_frames/
+
+# OSD 汉字生成的临时验收输出
+outputs/osd_font_test/
 
 # SfePy 运行时写出的网格文件
 domain.vtk

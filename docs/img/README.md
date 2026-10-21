@@ -11,5 +11,12 @@
 | `screw-map.png` | 底板孔位 → 五金分配 |
 | `prop-compare.gif` | 3020-3 vs 3016-3 桨径/螺距/推力对比 |
 | `prop-compare.png` | 上面动画的静态预览 |
+| `fusion-drone-iso.png` | Fusion 整机等轴测（2026-10-19） |
+| `fusion-drone-camera.png` | Fusion 正面：S1039 相机、托架、GPS 位置 |
+| `fusion-drone-top.png` | Fusion 俯视：电池、扎带、电机线 |
+| `fusion-drone-bottom.png` | Fusion 仰视：电机螺丝、支撑柱、GPS/相机扎带 |
 
 仿真类图/动画不在这里，统一放在 [`outputs/vibration`](../../outputs/vibration/) 和 [`outputs/impact`](../../outputs/impact/)。
+
+`fusion-drone-*.png` 是从 Fusion 直接截的模型视图，不是 `make_doc_assets.py` 画的；
+改完模型后重新截即可。

@@ -1,4 +1,4 @@
-# outputs · 结果与图纸
+# Kepler V · 结果与图纸
 
 这里放**可以直接看的结果**：CAD 图纸、仿真图、动画、表格和模型记录。
 真正生成这些结果的脚本在本地 `work/`（不进仓库），避免把几万行中间件和几百张逐帧 PNG 塞进 Git。
@@ -7,10 +7,12 @@
 
 | 目录 | 内容 | 先看什么 |
 |---|---|---|
-| [`cad/`](cad/) | v3 底板 / 上层板 / 相机托架 DXF、STL、预览 | `v3-preview.png` |
+| [`cad/`](cad/) | Kepler V 的 v3 底板 / 上层板 / 相机托架 DXF、STL、预览 | `v3-preview.png` |
 | [`vibration/`](vibration/) | 机臂模态、材料对比、Campbell 图、响应曲线、振型动画 | `f1_materials.png`、`campbell.png` |
 | [`assembly/`](assembly/) | 整机装配模态、3D 振型动画、网格收敛 | `assembly_mode1_3d.gif` |
 | [`impact/`](impact/) | stack 孔拉脱、底板臂根、长槽半孔、3D/热力图动画 | `stack_hole/top_plate_pull_3d.gif` |
+| [`osd_font/`](osd_font/) | Kepler V 中文点阵、`.mcm` 字库和字符槽映射 | `dotmatrix_page_01.png` |
+| [`osd_logo/`](osd_logo/) | 288×72 OSD 启动 Logo BMP | `kepler_v_boot_logo.bmp` |
 | [`archive/`](archive/) | 旧版 CAD、旧版仿真；只作历史对照 | `sim-v1-manual/README.md` |
 
 ## 文件命名

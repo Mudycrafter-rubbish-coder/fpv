@@ -1,0 +1,16 @@
+betaflight_base.mcm
+===================
+
+Source:
+https://github.com/betaflight/betaflight-configurator/blob/master/resources/osd/1/betaflight.mcm
+
+This file is the Betaflight Configurator default MAX7456 font.  It is used
+here as a base so that ASCII characters, digits, and OSD symbols remain
+available when Chinese glyphs are added.
+
+Betaflight and Betaflight Configurator are licensed under the GNU General
+Public License, version 3 (GPL-3.0).  If you redistribute a font derived from
+this file, comply with the GPL-3.0 terms and keep this notice with it.
+
+The Chinese glyphs added by this project come from the separate Fusion Pixel
+font (SIL Open Font License 1.1, see OFL.txt in this directory).
