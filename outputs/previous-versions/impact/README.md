@@ -24,4 +24,4 @@
 - `slot_half_hole/slot_pull_bars.png` — 8 个半孔工况柱状图
 - `slot_half_hole/slot_half_hole_3d.gif` — 500 g 面外 3D 特写
 
-详细解释见 [docs/08](../../docs/08-冲击与螺丝拉脱.md) 和 [docs/09](../../docs/09-长槽半孔拉脱.md)。
+详细解释见 [docs/08](../../../docs/previous-versions/08-冲击与螺丝拉脱.md) 和 [docs/09](../../../docs/previous-versions/09-长槽半孔拉脱.md)。

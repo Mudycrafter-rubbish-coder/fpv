@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="980" viewBox="0 0 1500 980">
+  <rect width="1500" height="980" fill="#10151d"/>
+  <style>
+    .title{fill:#f3f6fa;font:700 34px "Microsoft YaHei",sans-serif}
+    .sub{fill:#9da9b7;font:18px "Microsoft YaHei",sans-serif}
+    .box{fill:#1b2430;stroke:#8fa1b5;stroke-width:3}
+    .box2{fill:#202c39;stroke:#9eb2c8;stroke-width:2}
+    .h{fill:#f5f7fa;font:700 22px "Microsoft YaHei",sans-serif}
+    .t{fill:#d5dde6;font:17px "Microsoft YaHei",sans-serif}
+    .s{fill:#9eacba;font:14px "Microsoft YaHei",sans-serif}
+    .red{stroke:#ff5b5b;stroke-width:5;fill:none}
+    .blk{stroke:#e8edf2;stroke-width:4;fill:none}
+    .yellow{stroke:#ffd84d;stroke-width:5;fill:none}
+    .orange{stroke:#ff9a3c;stroke-width:4;fill:none}
+    .blue{stroke:#5cbcff;stroke-width:4;fill:none}
+    .green{stroke:#60e38b;stroke-width:4;fill:none}
+    .purple{stroke:#c78bff;stroke-width:4;fill:none}
+    .dot{fill:#10151d;stroke:#d7e2ed;stroke-width:2}
+    .pad{fill:#e9bd58;stroke:#fff0b0;stroke-width:1}
+    .warn{fill:#2b2111;stroke:#ffc14d;stroke-width:2}
+    .warnh{fill:#ffd177;font:700 18px "Microsoft YaHei",sans-serif}
+    .warnt{fill:#f1d59d;font:15px "Microsoft YaHei",sans-serif}
+  </style>
+
+  <text x="55" y="55" class="title">Kepler V - FC / VTX / Camera wiring</text>
+  <text x="55" y="88" class="sub">GHF435AIO V2 + EWRF TS5823 Pro + S1039 + KEPLER V J1</text>
+
+  <!-- Battery -->
+  <rect x="45" y="150" width="240" height="180" rx="14" class="box"/>
+  <text x="72" y="190" class="h">3S LiPo</text>
+  <text x="72" y="225" class="t">7.4-12.6 V</text>
+  <circle cx="250" cy="210" r="7" fill="#ff5b5b"/>
+  <text x="202" y="204" class="s">BAT+</text>
+  <circle cx="250" cy="270" r="7" fill="#e8edf2"/>
+  <text x="210" y="264" class="s">BAT-</text>
+
+  <!-- FC -->
+  <rect x="360" y="120" width="500" height="690" rx="16" class="box"/>
+  <text x="420" y="165" class="h">JHEMCU GHF435AIO V2</text>
+  <text x="420" y="194" class="s">solder-pad grouping (not MCU package pins)</text>
+
+  <rect x="390" y="225" width="440" height="125" rx="10" class="box2"/>
+  <text x="405" y="252" class="t" font-weight="700">POWER</text>
+  <text x="405" y="285" class="s">BAT+   BAT-/GND   +5V/GND   4.5V/GND</text>
+  <text x="405" y="317" class="s">Do not feed 5 V into BAT+ or the VTX Power-in wire.</text>
+
+  <rect x="390" y="370" width="440" height="120" rx="10" class="box2"/>
+  <text x="405" y="397" class="t" font-weight="700">VIDEO / OSD</text>
+  <text x="405" y="430" class="s">CAM  = camera video input</text>
+  <text x="405" y="458" class="s">VTX  = video output with OSD overlay</text>
+
+  <rect x="390" y="510" width="440" height="135" rx="10" class="box2"/>
+  <text x="405" y="537" class="t" font-weight="700">CONTROL</text>
+  <text x="405" y="570" class="s">LED = WS2812 data</text>
+  <text x="405" y="598" class="s">BZ+ / BZ- = 5 V active buzzer</text>
+  <text x="405" y="626" class="s">SDA / SCL = optional compass</text>
+
+  <rect x="390" y="665" width="440" height="115" rx="10" class="box2"/>
+  <text x="405" y="692" class="t" font-weight="700">UART</text>
+  <text x="405" y="724" class="s">UART5: TX5 / RX5  -> KEPLER V MSP</text>
+  <text x="405" y="750" class="s">UART2: TX2 / RX2 / SBUS / 4.5V / GND</text>
+  <text x="405" y="776" class="s">UART3: TX3 / RX3 spare</text>
+
+  <!-- VTX -->
+  <rect x="980" y="120" width="330" height="330" rx="16" class="box"/>
+  <text x="1010" y="162" class="h">EWRF TS5823 Pro</text>
+  <text x="1010" y="192" class="s">6-pin wiring harness</text>
+  <rect x="1090" y="225" width="80" height="185" rx="10" fill="#303b48" stroke="#aab8c7" stroke-width="2"/>
+  <circle cx="1110" cy="250" r="7" fill="#ff5050"/>
+  <circle cx="1110" cy="277" r="7" fill="#111"/>
+  <circle cx="1110" cy="304" r="7" fill="#ffd84d"/>
+  <circle cx="1110" cy="331" r="7" fill="#f4f4f4"/>
+  <circle cx="1110" cy="358" r="7" fill="#5cbcff"/>
+  <circle cx="1110" cy="385" r="7" fill="#ff9a3c"/>
+  <text x="1130" y="255" class="s">Red: Power in 7-24 V</text>
+  <text x="1130" y="282" class="s">Black: GND</text>
+  <text x="1130" y="309" class="s">Yellow: Video in</text>
+  <text x="1130" y="336" class="s">White: Audio in (NC)</text>
+  <text x="1130" y="363" class="s">Blue: camera 5 V GND</text>
+  <text x="1130" y="390" class="s">Orange: DC 5 V out</text>
+
+  <!-- Camera -->
+  <rect x="980" y="565" width="330" height="185" rx="16" class="box"/>
+  <text x="1010" y="607" class="h">S1039 Camera</text>
+  <text x="1010" y="642" class="s">3-wire interface</text>
+  <text x="1010" y="680" class="t">+5V  /  GND  /  VIDEO OUT</text>
+  <text x="1010" y="718" class="s">Camera output goes to FC CAM first.</text>
+
+  <!-- Aux board -->
+  <rect x="980" y="790" width="330" height="130" rx="16" class="box"/>
+  <text x="1010" y="830" class="h">KEPLER V J1</text>
+  <text x="1010" y="865" class="s">1 FC_5V   2 GND</text>
+  <text x="1010" y="892" class="s">3 FC_UART5_TX   4 FC_UART5_RX</text>
+
+  <!-- Wires battery to FC/VTX -->
+  <path d="M257 210 H320 V250 H390" class="red"/>
+  <path d="M257 210 H320 V190 H760 V250 H1080" class="red"/>
+  <path d="M257 270 H320 V295 H390" class="blk"/>
+  <path d="M257 270 H320 V220 H742 V277 H1080" class="blk"/>
+
+  <!-- FC video to VTX and camera video to FC -->
+  <path d="M830 445 H900 V304 H1090" class="yellow"/>
+  <path d="M980 688 H900 V430 H830" class="yellow"/>
+
+  <!-- VTX 5V out to camera -->
+  <path d="M1090 385 H920 V680 H980" class="orange"/>
+  <path d="M1090 358 H945 V720 H980" class="blue"/>
+
+  <!-- UART5 to aux -->
+  <path d="M830 724 H900 V865 H980" class="green"/>
+  <path d="M830 750 H920 V892 H980" class="purple"/>
+
+  <!-- warning panel -->
+  <rect x="45" y="390" width="270" height="330" rx="14" class="warn"/>
+  <text x="70" y="430" class="warnh">Before power</text>
+  <text x="70" y="466" class="warnt">1. Antenna attached.</text>
+  <text x="70" y="496" class="warnt">2. No battery/5 V reverse.</text>
+  <text x="70" y="526" class="warnt">3. Camera output -> FC CAM.</text>
+  <text x="70" y="556" class="warnt">4. FC VTX -> VTX yellow.</text>
+  <text x="70" y="586" class="warnt">5. Buzzer pad is not logic.</text>
+  <text x="70" y="616" class="warnt">6. White audio wire stays NC.</text>
+  <text x="70" y="646" class="warnt">7. Check common GND first.</text>
+
+  <text x="55" y="950" class="s">Colors follow the EWRF TS5823 Pro official harness; verify connector keying and silkscreen before soldering.</text>
+</svg>
